@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scroll Cull</title>
+
+    <style>
+        body{
+            position:relative;
+        }
+            #content{
+                display:block;
+                height:500px;
+                padding:10px;
+                margin:0;
+                overflow-y:scroll;
+                border:1px solid #000;
+            }
+                .dummy_block{
+                    display:block;
+                    height:150px;
+                    border:1px solid #dbdbdb;
+                    margin-bottom:10px;
+                    background-color:#D9EDF7;
+                }
+    </style>
+</head>
+<body>
+    <h1>Scroll Cull</h1>
+    <h2>Total items:<span id="counter"></span></h2>
+    <ul id="content">
+
+    </ul>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../jquery.scroll-cull.js"></script>
+    <script>
+        var counter = $('#counter');
+
+        $('#content').cull({
+            chunks:10,
+            buffer:0,
+            reveal:function(index) {
+                counter.html(index+1);
+                return '<li class="dummy_block"><h2>Item '+index+'</h2></li>';
+            }
+        });
+    </script>
+</body>
+</html>
