@@ -2,13 +2,37 @@
 *A jQuery Plugin*
 
 ##Description
-**Author**: Adam Magaña &lt;holla@adammagana.com&gt;
-**Last Edit**: August 23, 2012
+**Author**: Adam Magaña &lt;holla@adammagana.com&gt;  
+**Last Edit**: August 23, 2012  
 **Version**: 0.0.1
 
-Based on the concept of [back-face culling](http://en.wikipedia.org/wiki/Back-face_culling). Provides the ability to monitor a content area's scrollTop property and invoke a callback function for rendering new content when the scroll position is at or near the fold. This prevents content from being rendered that is not in the viewable scroll area.
+Based on the concept of [back-face culling](http://en.wikipedia.org/wiki/Back-face_culling). Provides the ability to monitor a content area's `scrollTop` property and invoke a callback function for rendering new content when the scroll position is at or near the fold. This prevents content from being rendered that is not in the viewable scroll area.
 
 ##Usage
+
+```html
+<div id="scrolling_div">
+  <!-- Visible content is rendered here by the reveal callback method -->
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#scrolling_div').cull({
+      buffer: 0,
+      chunks: 10,
+      reveal: function (index) {
+        return '<p>' + index + ': Rendered by the reveal callback method!';
+      }
+    });
+  });
+</script>
+```
+
+This usage is very simple and doesn't get much more complicated. Culling is instantiated on the `#scrolling_div` element which means a few things automatically happen: the height of `#scrolling_div` is calculated, the reveal function is called until the total content height of the inner HTML meets or exceeds the height of the div itself, and a scroll event listener is bound to determine when more content should be rendered for viewing. That's quite a mouthful but it's actually pretty simple.
+
+##Options
+
+Setting descriptions and defaults go here...
 
 ##License
 
