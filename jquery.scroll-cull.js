@@ -8,8 +8,8 @@
 (function (window, $, undefined) {
     var pluginName = 'cull',
         defaults = {
+            buffer: 0,
             chunks: 5,
-            buffer: 100,
             reveal: $.noop
         };
 
