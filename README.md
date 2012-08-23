@@ -34,7 +34,38 @@ Still confused? Check out the [live demo here](http://jsfiddle.net/adammagana/MK
 
 ##Options
 
-Setting descriptions and defaults go here...
+Not sure what the settings and options are? Not sure what they mean? This should clear things up:
+
+<table>
+  <tr>
+    <td><strong>Name</strong></td>
+    <td><strong>Type</strong></td>
+    <td><strong>Parameters</strong></td>
+    <td><strong>Default Value</strong></td>
+    <td><strong>Description</strong></td>
+  </tr>
+  <tr>
+    <td>buffer</td>
+    <td>integer</td>
+    <td>None</td>
+    <td>0</td>
+    <td>Number of pixels above the bottom of the scroll area to invoke the reveal callback method.</td>
+  </tr>
+  <tr>
+    <td>chunks</td>
+    <td>integer</td>
+    <td>None</td>
+    <td>5</td>
+    <td>Number of times to invoke the reveal callback method when the scroll postion reaches the buffer.</td>
+  </tr>
+  <tr>
+    <td>reveal</td>
+    <td>function (returns a string)</td>
+    <td>index</td>
+    <td>$.noop</td>
+    <td>Callback function that is invoked to render new content.</td>
+  </tr>
+</table>
 
 ##License
 
