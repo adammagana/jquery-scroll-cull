@@ -30,6 +30,8 @@ Based on the concept of [back-face culling](http://en.wikipedia.org/wiki/Back-fa
 
 This usage is very simple and doesn't get much more complicated. Culling is instantiated on the `#scrolling_div` element which means a few things automatically happen: the height of `#scrolling_div` is calculated, the reveal function is called until the total content height of the inner HTML meets or exceeds the height of the div itself, and a scroll event listener is bound to determine when more content should be rendered for viewing. That's quite a mouthful but it's actually pretty simple.
 
+Still confused? Check out the [live demo here](http://jsfiddle.net/adammagana/MKUDG/1/).
+
 ##Options
 
 Setting descriptions and defaults go here...
